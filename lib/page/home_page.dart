@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_order_service/models/food_models.dart';
 import 'package:food_order_service/widget/filter_button.dart';
 
 class HomePage extends StatefulWidget {
@@ -20,6 +21,7 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: 20),
             buildSearch(),
             buildFilter(),
+            buildFoodList(),
           ],
         ),
       ),
@@ -90,6 +92,19 @@ class _HomePageState extends State<HomePage> {
           FilterButton(title: 'combo pack', isSelected: false),
           FilterButton(title: 'khmer food', isSelected: false),
         ],
+      ),
+    );
+  }
+
+  Widget buildFoodList() {
+    return Container(
+      height: 220,
+      child: ListView.builder(
+        itemCount: foodList.length,
+        itemBuilder: (BuildContext context, int index) {
+          FoodModel food = foodList[index];
+          return Text(food.name);
+        },
       ),
     );
   }
