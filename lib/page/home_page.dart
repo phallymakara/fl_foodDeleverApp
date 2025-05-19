@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_order_service/models/food_models.dart';
 import 'package:food_order_service/widget/filter_button.dart';
+import 'package:food_order_service/widget/food_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -21,6 +22,7 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: 20),
             buildSearch(),
             buildFilter(),
+            SizedBox(height: 20),
             buildFoodList(),
           ],
         ),
@@ -98,12 +100,13 @@ class _HomePageState extends State<HomePage> {
 
   Widget buildFoodList() {
     return Container(
-      height: 220,
+      height: 250,
       child: ListView.builder(
+        scrollDirection: Axis.horizontal,
         itemCount: foodList.length,
         itemBuilder: (BuildContext context, int index) {
           FoodModel food = foodList[index];
-          return Text(food.name);
+          return FoodCard(food: food);
         },
       ),
     );
