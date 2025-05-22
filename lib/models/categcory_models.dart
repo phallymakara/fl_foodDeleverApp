@@ -14,5 +14,5 @@ final List<Categcory> category = [
   Categcory('https://picsum.photos/200/200/?snack', 'Snacks', 43),
   Categcory('https://picsum.photos/200/200/?meat', 'Meat', 35),
   Categcory('https://picsum.photos/200/200/?food', 'Street Food', 64),
-  Categcory('', 'food', 37),
+  Categcory('https://picsum.photos/200/200/?food', 'food', 37),
 ];

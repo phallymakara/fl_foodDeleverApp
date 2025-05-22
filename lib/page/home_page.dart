@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_order_service/models/categcory_models.dart';
 import 'package:food_order_service/models/food_models.dart';
+import 'package:food_order_service/widget/category_card.dart';
 import 'package:food_order_service/widget/custom_icon_button.dart';
 import 'package:food_order_service/widget/filter_button.dart';
 import 'package:food_order_service/widget/food_card.dart';
@@ -139,10 +140,11 @@ class _HomePageState extends State<HomePage> {
       primary: false,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
+        childAspectRatio: 16 / 6,
       ),
       itemBuilder: (context, index) {
         final Categcory categcory = category[index];
-        return Card(child: Text(categcory.name)); // Empty card
+        return CategoryCard(category: categcory); // Empty card
       },
     );
   }
