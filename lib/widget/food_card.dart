@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_order_service/models/food_models.dart';
+import 'package:food_order_service/widget/custom_icon_button.dart';
 
 class FoodCard extends StatelessWidget {
   final FoodModel food;
@@ -27,6 +28,34 @@ class FoodCard extends StatelessWidget {
             height: 150,
             width: double.infinity,
             fit: BoxFit.cover,
+          ),
+        ),
+        Align(
+          alignment: Alignment.topRight,
+          child: CustomIconButton(
+            margin: EdgeInsets.only(left: 2),
+            elevation: 0,
+            radius: 32,
+            onPressed: () {},
+            icon: Icon(Icons.favorite, color: Colors.red),
+          ),
+        ),
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.black87.withOpacity(0.5),
+            borderRadius: BorderRadius.circular(4),
+          ),
+          padding: EdgeInsets.all(4),
+          margin: EdgeInsets.all(4),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.star, color: Colors.yellow, size: 12),
+              SizedBox(width: 2),
+              Text('${food.rating}', style: TextStyle(color: Colors.white)),
+              SizedBox(width: 3),
+              Text('1k+', style: TextStyle(color: Colors.white70)),
+            ],
           ),
         ),
       ],

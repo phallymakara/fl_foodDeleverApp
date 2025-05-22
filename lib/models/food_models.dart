@@ -10,31 +10,31 @@ class FoodModel {
 
 final List<FoodModel> foodList = [
   FoodModel(
-    'Delicious creamy soup with corn', // updated description
-    'https://picsum.photos/200/200',
+    'Cream and courn shoup ', // updated description
+    'https://picsum.photos/200/200/?soup',
     'Cream and Corn Soup',
     12.23,
-    4.6,
+    4.9,
   ),
   FoodModel(
     'Rich, warm and tasty', // updated description
-    'https://picsum.photos/200/200',
-    'Cream and Corn Soup',
-    12.23,
-    4.6,
+    'https://picsum.photos/200/200/?chicken',
+    'Chicken and Rice',
+    15.95,
+    4.8,
   ),
   FoodModel(
     'Perfect for winter days', // updated description
-    'https://picsum.photos/200/200',
-    'Cream and Corn Soup',
+    'https://picsum.photos/200/200/?dessert',
+    'dessert and food',
     12.23,
-    4.6,
+    4.0,
   ),
   FoodModel(
     'Best served hot!', // updated description
-    'https://picsum.photos/200/200',
-    'Cream and Corn Soup',
-    12.23,
-    4.6,
+    'https://picsum.photos/200/200/?cream',
+    'Cream ',
+    1.3,
+    4.9,
   ),
 ];

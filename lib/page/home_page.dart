@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:food_order_service/models/categcory_models.dart';
 import 'package:food_order_service/models/food_models.dart';
+import 'package:food_order_service/widget/custom_icon_button.dart';
 import 'package:food_order_service/widget/filter_button.dart';
 import 'package:food_order_service/widget/food_card.dart';
 
@@ -24,6 +26,8 @@ class _HomePageState extends State<HomePage> {
             buildFilter(),
             SizedBox(height: 20),
             buildFoodList(),
+            buildSectionTitle(),
+            buildCategoryList(),
           ],
         ),
       ),
@@ -69,13 +73,11 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
-        Card(
-          margin: EdgeInsets.only(left: 12),
-          color: Colors.green,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Icon(Icons.filter),
-          ),
+        CustomIconButton(
+          margin: EdgeInsets.only(left: 8),
+          icon: Icon(Icons.filter_list),
+          backgroundColor: Colors.green,
+          onPressed: () {},
         ),
       ],
     );
@@ -109,6 +111,39 @@ class _HomePageState extends State<HomePage> {
           return FoodCard(food: food);
         },
       ),
+    );
+  }
+
+  Widget buildSectionTitle() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          'Explore Category',
+          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        ),
+        TextButton(
+          onPressed: () {
+            // implement function here
+          },
+          child: Text('View all'),
+        ),
+      ],
+    );
+  }
+
+  Widget buildCategoryList() {
+    return GridView.builder(
+      itemCount: category.length,
+      shrinkWrap: true,
+      primary: false,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+      ),
+      itemBuilder: (context, index) {
+        final Categcory categcory = category[index];
+        return Card(child: Text(categcory.name)); // Empty card
+      },
     );
   }
 }
